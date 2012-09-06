@@ -188,7 +188,7 @@ end
 
 local function bannerAdListener(event)
 
-	--print("bannerAdListener:",event.response)
+	print("bannerAdListener:",event.response)
 
 	local responseAsJson = json.decode(event.response)
     if responseAsJson.error then
@@ -201,7 +201,7 @@ end
 
 local function alertAdListener(event)
 
-	--print("alertAdListener:",event.response)
+	print("alertAdListener:",event.response)
 
 	local responseAsJson = json.decode(event.response)
     if responseAsJson.error then
@@ -220,7 +220,7 @@ end
 
 local function interstitialAdListener(event)
 
-	--print("interstitialAdListener:",event.response)
+	print("interstitialAdListener:",event.response)
 
 	local responseAsJson = json.decode(event.response)
     if responseAsJson.error then
