@@ -13,7 +13,7 @@ Features;
 
 ```lua
 local tapit = require("tapit")
-tapit.requestBannerAds({zoneId=3644})
+tapit.requestBannerAds({zoneId=3644,x=0,y=0})
 ```
 
 ### Alert Ads Sample
@@ -27,7 +27,7 @@ tapit.requestAlertAds({zoneId=3644})
 
 ```lua
 local tapit = require("tapit")
-tapit.requestInterstitialAds({zoneId=3644})
+tapit.requestInterstitialAds({zoneId=3644,x=0,y=0})
 ```
 
 GitHub repository and documentation

@@ -30,6 +30,8 @@ local swapAlertButtons
 local bannerOnClickHandler
 local alertOnClickHandler
 local interstitialOnClickHandler
+local currentAdViewPosX
+local currentAdViewPosY
 
 local instance = {}
 
@@ -81,6 +83,15 @@ local function displayContentInWebPopup(x,y,contentWidth,contentHeight,contentHt
     local newWidth = contentWidth
     local newHeight = contentHeight
     local scale = 1/display.contentScaleY
+
+    if runningOnIPAD then
+        
+        if dontScaleOnIPAD then
+            newWidth = newWidth/scale
+            newHeight = newHeight/scale
+        end
+
+    end
     
     if currentPlatform == PLATFORM_ANDROID then
 
@@ -182,7 +193,7 @@ local function displayTapitResponseAsHtml(responseAsJson, clickHandler)
 	responseAsJson.html = string.gsub(responseAsJson.html,'target=','target_disabled=')
 	local htmlContent = '<html><head>'..viewportMetaTagForCurrentPlatform..'</head><body style="margin:0; padding:0; text-align:center">'..responseAsJson.html..'</body></html>'
 
-	displayContentInWebPopup(0,0,currentAdWidth,currentAdHeight,htmlContent,clickHandler)
+	displayContentInWebPopup(currentAdViewPosX,currentAdViewPosY,currentAdWidth,currentAdHeight,htmlContent,clickHandler)
 
 end
 
@@ -290,6 +301,8 @@ local function requestBannerAds(configParams)
 
     local requestParams = buildTapitParams(configParams)
     bannerOnClickHandler = configParams.onClick or nil
+    currentAdViewPosX = configParams.x or 0
+    currentAdViewPosY = configParams.y or 0
 
 	requestHttp(tapitAdServerUrl, requestParams, bannerAdListener)
 
@@ -315,6 +328,8 @@ local function requestInterstitialAds(configParams)
     requestParams.adtype = 2
 
     interstitialOnClickHandler = configParams.onClick or nil
+    currentAdViewPosX = configParams.x or 0
+    currentAdViewPosY = configParams.y or 0
 
 	requestHttp(tapitAdServerUrl, requestParams, interstitialAdListener)
 

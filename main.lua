@@ -25,11 +25,11 @@ end
 -- If you would like to receive a banner ad from TapIt, simply call the function below.
 --
 -- zoneId is your active zoneId that you create on tapit control panel.
+-- x and y are onscreen ad display positions.
 -- onClick parameter is an optional callback function. It will be called when users click
 -- on a banner.
 
-tapit.requestBannerAds({zoneId=3644, onClick=adClicked})
-
+tapit.requestBannerAds({zoneId=3644, x=0, y=0, onClick=adClicked})
 
 -- TapIt also provides Alert Ads. If you comment out the code below, you will get
 -- an alert popup.
@@ -41,4 +41,4 @@ tapit.requestBannerAds({zoneId=3644, onClick=adClicked})
 
 -- TapIt also supports full screen interstitial ads (wall ads)
 
--- tapit.requestInterstitialAds({zoneId=3644, onClick=adClicked})
+-- tapit.requestInterstitialAds({zoneId=3644, x=0, y=0, onClick=adClicked})
