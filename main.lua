@@ -42,3 +42,6 @@ tapit.requestBannerAds({zoneId=3644, x=0, y=0, onClick=adClicked})
 -- TapIt also supports full screen interstitial ads (wall ads)
 
 -- tapit.requestInterstitialAds({zoneId=3644, x=0, y=0, onClick=adClicked})
+
+-- you can also call the function below to close an already opened interstitial ads window
+-- tapit.closeIntersitialAds()
