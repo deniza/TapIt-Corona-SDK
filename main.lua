@@ -44,4 +44,4 @@ tapit.requestBannerAds({zoneId=3644, x=0, y=0, onClick=adClicked})
 -- tapit.requestInterstitialAds({zoneId=3644, x=0, y=0, onClick=adClicked})
 
 -- you can also call the function below to close an already opened interstitial ads window
--- tapit.closeIntersitialAds()
+-- tapit.closeInterstitialAds()

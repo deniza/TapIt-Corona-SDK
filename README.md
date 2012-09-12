@@ -30,7 +30,7 @@ local tapit = require("tapit")
 tapit.requestInterstitialAds({zoneId=3644,x=0,y=0})
 
 -- you can also call the function below to close an already opened interstitial ads window
--- tapit.closeIntersitialAds()
+-- tapit.closeInterstitialAds()
 
 ```
 
