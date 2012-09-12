@@ -336,4 +336,9 @@ local function requestInterstitialAds(configParams)
 end
 instance.requestInterstitialAds = requestInterstitialAds
 
+local function closeInterstitialAds()
+    native.cancelWebPopup()
+end
+instance.closeInterstitialAds = closeInterstitialAds
+
 return instance
