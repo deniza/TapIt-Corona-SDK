@@ -34,6 +34,15 @@ tapit.requestInterstitialAds({zoneId=3644,x=0,y=0})
 
 ```
 
+### Auto refresh banner ads
+```lua
+local tapit = require("tapit")
+-- here we request a new banner ad at each 60 seconds.
+timer.performWithDelay( 60*1000, function()
+   tapit.requestBannerAds({zoneId=3644, x=0, y=0})
+end, 0)
+```
+
 GitHub repository and documentation
 
 https://github.com/deniza/TapIt-Corona-SDK
