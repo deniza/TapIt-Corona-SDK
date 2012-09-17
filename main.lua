@@ -28,8 +28,12 @@ end
 -- x and y are onscreen ad display positions.
 -- onClick parameter is an optional callback function. It will be called when users click
 -- on a banner.
+-- You can use zoneId=3644 as a test mode until your actual zoneId will be approved by tapit.
 
 tapit.requestBannerAds({zoneId=3644, x=0, y=0, onClick=adClicked})
+
+-- If you would like to refresh banner ads automatically, please use the code below:
+-- timer.performWithDelay( 60*1000, function() tapit.requestBannerAds({zoneId=3644, x=0, y=0, onClick=adClicked}) end, 0) 
 
 -- TapIt also provides Alert Ads. If you comment out the code below, you will get
 -- an alert popup.
