@@ -28,10 +28,6 @@ tapit.requestAlertAds({zoneId=3644})
 ```lua
 local tapit = require("tapit")
 tapit.requestInterstitialAds({zoneId=3644,x=0,y=0})
-
--- you can also call the function below to close an already opened interstitial ads window
--- tapit.closeInterstitialAds()
-
 ```
 
 ### Auto refresh banner ads
@@ -41,6 +37,11 @@ local tapit = require("tapit")
 timer.performWithDelay( 60*1000, function()
    tapit.requestBannerAds({zoneId=3644, x=0, y=0})
 end, 0)
+```
+
+### Hide ads
+```lua
+tapit.hide()
 ```
 
 GitHub repository and documentation
