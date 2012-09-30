@@ -336,9 +336,9 @@ local function requestInterstitialAds(configParams)
 end
 instance.requestInterstitialAds = requestInterstitialAds
 
-local function closeInterstitialAds()
+local function hide()
     native.cancelWebPopup()
 end
-instance.closeInterstitialAds = closeInterstitialAds
+instance.hide = hide
 
 return instance
